@@ -3,11 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { NewsProvider } from './store/context';
+import { initialState, newsReducer } from './store/reducer./newsReducer';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <NewsProvider initialState={initialState} reducer={newsReducer}>
     <App />
-  </React.StrictMode>,
+
+  </NewsProvider>
+    
+  ,
   document.getElementById('root')
 );
 
